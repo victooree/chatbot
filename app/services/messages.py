@@ -1,4 +1,4 @@
-from server.app.core.models.message import Message
+from app.core.models.message import Message
 
 
 async def get_messages_of_chat_room(chat_room_id: int):

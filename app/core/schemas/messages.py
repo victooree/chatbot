@@ -1,7 +1,7 @@
 from datetime import datetime
 
-from server.app.core.models import User
-from server.app.core.schemas.base import ChatbotModel
+from app.core.models import User
+from app.core.schemas.base import ChatbotModel
 
 
 class MessageIn(ChatbotModel):

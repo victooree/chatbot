@@ -1,6 +1,6 @@
 from tortoise.contrib.fastapi import register_tortoise
 
-from server.app.core.settings import get_settings
+from app.core.settings import get_settings
 
 
 def get_config(database_uri):
@@ -11,7 +11,7 @@ def get_config(database_uri):
         },
         'apps': {
             'models': {
-                'models': ['server.app.core.models'],
+                'models': ['app.core.models'],
                 'default_connection': 'models'
             }
         },

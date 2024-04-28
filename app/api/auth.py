@@ -1,12 +1,12 @@
 from fastapi import APIRouter, Depends
 
-from server.app.core.models.user import User
-from server.app.core.schemas.auth import TokenPayload, TokenOut, UserCredentialForm, LoginOut, \
+from app.core.models.user import User
+from app.core.schemas.auth import TokenPayload, TokenOut, UserCredentialForm, LoginOut, \
     UserOut
-from server.app.services.users import create_user
-from server.app.utils.exceptions import UnauthorizedError
-from server.app.utils.jwt import create_jwt_token
-from server.app.utils.password import verify_password
+from app.services.users import create_user
+from app.utils.exceptions import UnauthorizedError
+from app.utils.jwt import create_jwt_token
+from app.utils.password import verify_password
 
 router = APIRouter(tags=['auth'])
 

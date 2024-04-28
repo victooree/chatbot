@@ -1,7 +1,7 @@
 FROM python:3.11-bullseye
 
 
-COPY server/app /app
+COPY app /app
 COPY requirements.txt /
 
 RUN apt-get update \

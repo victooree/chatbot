@@ -1,9 +1,8 @@
 from fastapi import APIRouter
 from starlette.status import HTTP_422_UNPROCESSABLE_ENTITY
-from server.app.utils.errors import CommonError
+from app.utils.errors import CommonError
 
-
-from server.app.api import (auth, user, chat)
+from app.api import chat, user, auth
 
 router = APIRouter(responses={HTTP_422_UNPROCESSABLE_ENTITY: {'model': CommonError}})
 

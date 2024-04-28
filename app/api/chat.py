@@ -1,9 +1,9 @@
 from fastapi import APIRouter, Depends
 
-from server.app.core.models import User
-from server.app.core.schemas.messages import MessageListOut, MessageOut, MessageIn
-from server.app.services.dependencies import get_user
-from server.app.services import chat
+from app.core.models import User
+from app.core.schemas.messages import MessageListOut, MessageOut, MessageIn
+from app.services.dependencies import get_user
+from app.services import chat
 
 router = APIRouter(tags=['chats'])
 

@@ -4,10 +4,10 @@ from fastapi import Depends
 from fastapi.security import HTTPAuthorizationCredentials
 from jose import JWTError
 
-from server.app.core.models import User
-from server.app.core.schemas.auth import TokenPayload
-from server.app.utils.exceptions import UnauthorizedError, CredentialsError
-from server.app.utils.jwt import auth_scheme, decode_jwt_token
+from app.core.models import User
+from app.core.schemas.auth import TokenPayload
+from app.utils.exceptions import UnauthorizedError, CredentialsError
+from app.utils.jwt import auth_scheme, decode_jwt_token
 
 
 async def verify_auth(bearer) -> TokenPayload:

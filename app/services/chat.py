@@ -1,12 +1,12 @@
 from tortoise.transactions import in_transaction
 
-from server.app.core.models import User
-from server.app.core.models.chat_room import ChatRoom
-from server.app.core.models.message import Message
-from server.app.core.schemas.messages import MessageOut, MessageListOut
-from server.app.services.messages import get_messages_of_chat_room
-from server.app.services.users import get_gpt_user
-from server.app.utils.chat_client import get_system_message, ChatClient
+from app.core.models import User
+from app.core.models.chat_room import ChatRoom
+from app.core.models.message import Message
+from app.core.schemas.messages import MessageOut, MessageListOut
+from app.services.messages import get_messages_of_chat_room
+from app.services.users import get_gpt_user
+from app.utils.chat_client import get_system_message, ChatClient
 
 
 async def get_chat_room_or_create(user: User):

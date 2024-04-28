@@ -3,7 +3,7 @@ from datetime import timedelta, timezone, datetime
 from fastapi.security import HTTPBearer
 from jose import jwt
 
-from server.app.core.settings import get_settings
+from app.core.settings import get_settings
 
 auth_scheme = HTTPBearer(scheme_name='Bearer', auto_error=False)
 

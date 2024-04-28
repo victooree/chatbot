@@ -1,8 +1,8 @@
 from openai import AsyncOpenAI
 
-from server.app.core.settings import get_settings
-from server.app.utils.exceptions import ExternalServiceError
-from server.app.utils.singleton import Singleton
+from app.core.settings import get_settings
+from app.utils.exceptions import ExternalServiceError
+from app.utils.singleton import Singleton
 
 
 def get_system_message():

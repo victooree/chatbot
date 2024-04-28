@@ -4,9 +4,9 @@ import uvicorn
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from server.app import api
-from server.app.core import database
-from server.app.core.settings import get_settings
+from app import api
+from app.core import database
+from app.core.settings import get_settings
 
 logging.basicConfig(level=logging.INFO)
 

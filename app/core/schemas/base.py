@@ -4,7 +4,7 @@ from tortoise import Model
 
 from pydantic import BaseModel, ConfigDict
 
-from server.app.utils.datetime import datetime_to_iso_format
+from app.utils.datetime import datetime_to_iso_format
 
 T = TypeVar('T', bound=BaseModel)
 

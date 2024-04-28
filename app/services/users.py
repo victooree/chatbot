@@ -1,6 +1,6 @@
-from server.app.core.models.user import User
-from server.app.utils.exceptions import BadRequestError
-from server.app.utils.password import get_password_hash
+from app.core.models.user import User
+from app.utils.exceptions import BadRequestError
+from app.utils.password import get_password_hash
 
 
 async def create_user(username: str, password: str):
