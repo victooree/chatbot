@@ -10,6 +10,7 @@ fastapi = {extras = ["all"], version = "*"}
 tortoise-orm = "*"
 pyjwt = "*"
 python-jose = "*"
+openai = "*"
 
 [dev-packages]
 

@@ -22,8 +22,6 @@ def get_application():
         allow_methods=["*"],
         allow_headers=["*"],
     )
-    # add_exception_handlers(_app)
-
     _app.include_router(api.router, prefix='/api')
 
     database.init_orm(_app)

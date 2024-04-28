@@ -41,3 +41,10 @@ class CredentialsError(BaseError):
                          title='Credentials Error',
                          detail=detail,
                          headers={"WWW-Authenticate": "Bearer"})
+
+
+class ExternalServiceError(BaseError):
+    def __init__(self, detail):
+        super().__init__(status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
+                         title='External Service Error',
+                         detail=detail)

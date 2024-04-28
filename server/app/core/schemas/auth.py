@@ -1,5 +1,6 @@
 from fastapi import Form
 
+from server.app.core.models import User
 from server.app.core.schemas.base import ChatbotModel
 
 
@@ -28,6 +29,7 @@ class TokenOut(ChatbotModel):
 class UserOut(ChatbotModel):
     id: int
     username: str
+    type: User.Type
 
 
 class LoginOut(ChatbotModel):
