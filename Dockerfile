@@ -1,9 +1,8 @@
 FROM python:3.11-bullseye
 
 
-COPY app /app
-COPY ./requirements.txt /
-COPY ./log_conf.yml /
+COPY server/app /app
+COPY requirements.txt /
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends git \
