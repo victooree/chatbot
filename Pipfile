@@ -11,6 +11,7 @@ tortoise-orm = "*"
 pyjwt = "*"
 python-jose = "*"
 openai = "*"
+bcrypt = "*"
 
 [dev-packages]
 
