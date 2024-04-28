@@ -10,7 +10,7 @@ router = APIRouter(tags=['chats'])
 
 @router.get('/chats', response_model=MessageListOut)
 async def get_chats(user: User = Depends(get_user)):
-    return []
+    return await chat.get_messages_records_of_chat_room(user)
 
 
 @router.post('/chats', response_model=MessageOut)

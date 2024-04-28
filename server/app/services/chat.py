@@ -3,7 +3,7 @@ from tortoise.transactions import in_transaction
 from server.app.core.models import User
 from server.app.core.models.chat_room import ChatRoom
 from server.app.core.models.message import Message
-from server.app.core.schemas.messages import MessageOut
+from server.app.core.schemas.messages import MessageOut, MessageListOut
 from server.app.services.messages import get_messages_of_chat_room
 from server.app.services.users import get_gpt_user
 from server.app.utils.chat_client import get_system_message, ChatClient
@@ -29,7 +29,7 @@ async def get_new_answer_from_chat_client(user: User, question: str) -> MessageO
         answer_message = await Message.create(chat_room=chat_room, content=answer, sender=gpt)
         await answer_message.save(using_db=conn)
         return MessageOut(id=answer_message.id,
-                          message=answer_message.content,
+                          content=answer_message.content,
                           sender_type=gpt.type,
                           created_at=answer_message.created_at)
 
@@ -42,3 +42,14 @@ def build_context(message_records: list[Message], new_question: str):
             {"role": "user" if message.sender.type == User.Type.BASIC else "assistant", "content": message.content})
     context.append({"role": "user", "content": new_question})
     return context
+
+
+async def get_messages_records_of_chat_room(user: User):
+    chat_room = await get_chat_room_or_create(user)
+    message_records = await get_messages_of_chat_room(chat_room.id)
+
+    return MessageListOut(messages=[
+        MessageOut(id=message.id,
+                   content=message.content,
+                   sender_type=message.sender.type,
+                   created_at=message.created_at) for message in message_records])

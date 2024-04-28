@@ -10,7 +10,7 @@ class MessageIn(ChatbotModel):
 
 class MessageOut(ChatbotModel):
     id: int
-    message: str
+    content: str
     sender_type: User.Type
     created_at: datetime
 
