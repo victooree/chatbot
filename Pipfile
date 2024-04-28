@@ -1,0 +1,17 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+python-dotenv = "*"
+pydantic-settings = "*"
+fastapi = {extras = ["all"], version = "*"}
+tortoise-orm = "*"
+pyjwt = "*"
+python-jose = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.11"
