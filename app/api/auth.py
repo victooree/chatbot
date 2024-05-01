@@ -27,5 +27,4 @@ async def login(form_data: UserCredentialForm = Depends(UserCredentialForm.as_fo
 
     payload = TokenPayload(sub=user.username)
     token = create_jwt_token(payload.model_dump())
-    print(user, token)
     return LoginOut(user=user, token=TokenOut(access_token=token, token_type="bearer"))

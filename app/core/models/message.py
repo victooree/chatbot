@@ -7,3 +7,9 @@ class Message(Model):
     sender = fields.ForeignKeyField('models.User', related_name='sender')
     content = fields.TextField()
     created_at = fields.DatetimeField(auto_now_add=True)
+
+    class Meta:
+        table = "chat_rooms"
+        index = [
+            "chat_room_id",
+        ]
