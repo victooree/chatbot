@@ -2,6 +2,7 @@ FROM python:3.11-bullseye
 
 
 COPY app /app
+COPY ./static /static
 COPY requirements.txt /
 
 RUN apt-get update \
